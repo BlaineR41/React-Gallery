@@ -3,15 +3,12 @@ import Photo from './Photo';
 
 const PhotoContainer = props => {
 
-    const results = props.data;
-
+console.log(props);
     return(
         <div className='photo-container'>
-            <h2>{props.query}</h2>
+            {/* <h2>{props.query}</h2> */}
                 <ul>
-                {results.map(photo => (
-                 <Photo id={photo.id} server={photo.server} secret={photo.secret} key={photo.id}/>
-                ))}
+                {props.photos.map(photo => <Photo image={photo} key={photo.id} /> )}
                 </ul>
         </div>
     );

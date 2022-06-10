@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Photo = (props) => {
-    const url = `https://live.staticflickr.com/${photo.server}/${photo.farm}/${photo.id}_${photo.secret}.jpg`;
+const Photo = ({image}) => {
+    const url = `https://live.staticflickr.com/${image.server}/${image.farm}/${image.id}_${image.secret}.jpg`;
 
     return(
         <li>
