@@ -5,7 +5,6 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Redirect
 } from 'react-router-dom'
 
 import apiKey from './config'
@@ -59,11 +58,12 @@ export default class App extends Component {
       <BrowserRouter>
         <SearchForm />
         <Nav />
+        <Switch>
          <PhotoContainer photos={this.state.results} />
-        <Route path="/arizona" render={() => <data={this.state.arizona}/>}/>
-        <Route path="/utah" render={() => <data={this.state.utah}/>}/>
-        <Route path="/pnw" render={() => <data={this.state.pnw}/>}/>
-       
+        <Route path="/arizona" render={() => <PhotoContainer photos={this.state.arizona}/>}/>
+        <Route path="/utah" render={() => <PhotoContainer photos={this.state.utah}/>}/>
+        <Route path="/pnw" render={() => <PhotoContainer photos={this.state.pnw}/>}/>
+        </Switch>
       </BrowserRouter>
     )
   }
