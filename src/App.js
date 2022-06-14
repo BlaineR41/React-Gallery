@@ -46,20 +46,17 @@ export default class App extends Component {
       
     }
   componentDidMount () {
-   
-  }
-
-  performSearch = (query) => {
     this.fetchData()
     this.fetchData('utah')
     this.fetchData('pnw')
     this.fetchData('arizona')
   }
 
+
   render() {
     return (
       <BrowserRouter>
-        <SearchForm onSearch={this.performSearch} />
+        <SearchForm  onSearch={this.fetchData}  />
         <Nav />
         <Switch>
         <Route exact path="/" render={() => <PhotoContainer photos={this.state.results}/>}/>
