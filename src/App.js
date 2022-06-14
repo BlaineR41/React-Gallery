@@ -53,13 +53,12 @@ export default class App extends Component {
   }
 
   render() {
-    // console.log(this.state.results);
     return (
       <BrowserRouter>
         <SearchForm />
         <Nav />
         <Switch>
-         <PhotoContainer photos={this.state.results} />
+        <Route exact path="/" render={() => <PhotoContainer photos={this.state.results}/>}/>
         <Route path="/arizona" render={() => <PhotoContainer photos={this.state.arizona}/>}/>
         <Route path="/utah" render={() => <PhotoContainer photos={this.state.utah}/>}/>
         <Route path="/pnw" render={() => <PhotoContainer photos={this.state.pnw}/>}/>
@@ -68,4 +67,3 @@ export default class App extends Component {
     )
   }
 }
-
