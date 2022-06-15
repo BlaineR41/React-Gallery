@@ -64,6 +64,7 @@ export default class App extends Component {
         <Route path="/utah" render={() => <PhotoContainer photos={this.state.utah}/>}/>
         <Route path="/pnw" render={() => <PhotoContainer photos={this.state.pnw}/>}/>
         <Route path="/search/:query" render={() => <PhotoContainer photos={this.state.results}/>}  />
+        <Route component={NotFound}/>
         </Switch>
       </BrowserRouter>
     )
