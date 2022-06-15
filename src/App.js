@@ -56,13 +56,14 @@ export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <SearchForm  onSearch={this.fetchData}  />
+        <SearchForm onSearch={this.fetchData}  />
         <Nav />
         <Switch>
         <Route exact path="/" render={() => <PhotoContainer photos={this.state.results}/>}/>
         <Route path="/arizona" render={() => <PhotoContainer photos={this.state.arizona}/>}/>
         <Route path="/utah" render={() => <PhotoContainer photos={this.state.utah}/>}/>
         <Route path="/pnw" render={() => <PhotoContainer photos={this.state.pnw}/>}/>
+        <Route path="/search/:query" render={() => <PhotoContainer photos={this.state.results}/>}  />
         </Switch>
       </BrowserRouter>
     )
