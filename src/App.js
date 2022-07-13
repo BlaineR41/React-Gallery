@@ -25,7 +25,7 @@ export default class App extends Component {
       };
     }
    
-    fetchData(query = this.state.query) {
+    fetchData = (query = this.state.query) => {
       fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&sort=relevance&format=json&nojsoncallback=1`)
         .then(response => response.json())
         .then(responseData => {
